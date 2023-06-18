@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Other from './pages/Other/Other';
 import Login from './pages/Login/Login';
 import ProtectedRoutes from './Routes/ProtectedRoutes';
+import NoPage from './pages/NoPage/NoPage';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route element={<ProtectedRoutes />} >
-            <Route path='/' element={<Home />} />
+            <Route exact path='/' element={<Home />} />
             <Route path='/other' element={<Other />} />
+            <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
